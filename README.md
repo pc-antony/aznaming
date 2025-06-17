@@ -47,7 +47,6 @@ Finally, select a resource group to place the resource in (this will be a dropdo
 
 The option 'count option' on this page relates to how the worksheet increments the resource count (last element of the naming structure):
 * **Instance Count Same Resource** - the count increments for each interation of a resource, regardless of whether the resource unique name is different or the resource is in a different RG. This is useful if as part of your naming convention you want to be able to see a count of each resource type.
-* when a duplicate resource name is created (where the 'resource unique name' is the same)
 * **Instance Count Same Name** - the count only increments when a duplicate resource name is created (where the 'resource unique name' is the same as is the rest of the naming convention (i.e. same env, azure region ...etc based on the structure decided). This effectively ensures no duplicate names are created which may cause build failures.
 * **Instance Count Same Name in RG** - the count only increments when a duplicate resource name is created (where the 'resource unique name' is the same) within the same resource group.
 
