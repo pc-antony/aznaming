@@ -46,14 +46,14 @@ Finally, select a resource group to place the resource in (this will be a dropdo
 > 🖋️ **Note:** The resource name will be created based on the required naming convention and restrictions. For example, storage accounts cannot have hyphens so for this resource type, the spreadsheet creates a name without any.
 
 The option 'count option' on this page relates to how the worksheet increments the resource count (last element of the naming structure):
-* Instance Count Same Resource - the count increments for each interation of a resource, regardless of whether the resource unique name is different or the resource is in a different RG. This is useful if as part of your naming convention you want to be able to see a count of each resource type.
+* **Instance Count Same Resource** - the count increments for each interation of a resource, regardless of whether the resource unique name is different or the resource is in a different RG. This is useful if as part of your naming convention you want to be able to see a count of each resource type.
 * when a duplicate resource name is created (where the 'resource unique name' is the same)
-* Instance Count Same Name - the count only increments when a duplicate resource name is created (where the 'resource unique name' is the same as is the rest of the naming convention (i.e. same env, azure region ...etc based on the structure decided). This effectively ensures no duplicate names are created which may cause build failures.
-* Instance Count Same Name in RG - the count only increments when a duplicate resource name is created (where the 'resource unique name' is the same) within the same resource group.
+* **Instance Count Same Name** - the count only increments when a duplicate resource name is created (where the 'resource unique name' is the same as is the rest of the naming convention (i.e. same env, azure region ...etc based on the structure decided). This effectively ensures no duplicate names are created which may cause build failures.
+* **Instance Count Same Name in RG** - the count only increments when a duplicate resource name is created (where the 'resource unique name' is the same) within the same resource group.
 
 > ⚠️ **Warning:** In Azure, the scope at which resource names must be unique depends on the type of resource. Some resources need to be globally unique (e.g. storage accounts, app services, key vaults, ACR) whilst most compute and networking resources only need to be unique within the RG. Be careful if using the 'Instance Count Same Name in RG' option as you may still get errors if you duplicate names in different RGs when the resource naming scope is global or tenant wide.
 
-###Examples:
+### Examples:
 
 **Example 1**: 4 SQL Managed Instances created. Count option is per resource so the count is from 1-4 (4 managed instances)
 ![image](https://github.com/user-attachments/assets/1a794725-a06f-4f67-88d0-e6cc9fba6bf0)
